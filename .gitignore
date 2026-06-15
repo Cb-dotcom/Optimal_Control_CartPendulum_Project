@@ -1,0 +1,18 @@
+# Simulink compiled cache
+*.slxc
+*.autosave
+
+# MATLAB autosave
+*.asv
+
+# Simulink build artifacts
+slprj/
+codegen/
+
+# MEX binaries
+*.mexw64
+*.mexmaca64
+*.mexa64
+
+# Signal editor data (machine-generated)
+drct_pendulum_SignalEditorData.mat
