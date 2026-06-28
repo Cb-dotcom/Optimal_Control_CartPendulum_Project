@@ -8,7 +8,7 @@ l = 0.3;     % link length          [m]
 b = 0.1;     % cart friction        [N/(m/s)]
 g = 9.81;   % gravity              [m/s^2]
 Ts = 0.01;     % sample time          [s]
-x0 = [0; 0; pi; 0]; % initial state
+x0 = [0; 0; 0.2; 0]; % initial state
 
 %% Plant & Discretiziation
 % continuous  xdot = f(x,u)

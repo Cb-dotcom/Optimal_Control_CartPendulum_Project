@@ -15,4 +15,4 @@ codegen/
 *.mexa64
 
 # Signal editor data (machine-generated)
-drct_pendulum_SignalEditorData.mat
+*.mat
