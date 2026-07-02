@@ -38,14 +38,19 @@ V = diag([10 5 100 5]);       % state weight
 P = 0.05;                     % input weight
 L = lqr_riccati(F, W, V, P, 1e-12, 10000);   % = Lbar,  u = -L x
 
-%% FINITE HORIZON SET UP
-Ts_swing = 0.02;
+% %% FINITE HORIZON SET UP
+% Ts_swing = 0.02;
 % [u_opt, x_pred] = fh_controller(x0, M, m, l, b, g, Ts_swing);
 % t_vec = (0:length(u_opt)-1)' * Ts_swing;
 
-% % Save it to the workspace
-% assignin('base', 't_swing_lut', t_vec);
-% assignin('base', 'u_swing_lut', u_opt);
+%% iLQR CONTROLLER OPEN LOOP SET UP
+Ts_swing = 0.02;
+[u_opt, x_pred] = iLQR_controller(x0, M, m, l, b, g, Ts_swing);
+t_vec = (0:length(u_opt)-1)' * Ts_swing;
+
+% Save it to the workspace
+assignin('base', 't_swing_lut', t_vec);
+assignin('base', 'u_swing_lut', u_opt);
 
 %% Save to use in simulink
 save('cartpole_cfg.mat','M','m','l','b','g','G','Ts','Ts_swing','fc','Ac','Bc','F','W','G','L','x0');
